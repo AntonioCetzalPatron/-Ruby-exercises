@@ -2,25 +2,25 @@
 
 # Class of the payment, an payment is
 # given to some user and he is allowed to pay to his account
-class RentClass
+class RentClass ### sin Class
   attr_accessor :id, :amount, :user
   attr_reader :rent, :pay
 
   def initialize(amount, users)
-    puts "Amount: $#{amount}"
-    @amount = amount.to_f
+    puts "Amount: $#{amount}" #### sin puts
+    @amount = amount.to_f #### sin to_f
     @users = users
     @rent = []
     @pay = []
   end
 
-  def give_rent(user_id)
-    raise "No user records (Records: #{@users})." if @users.empty? == true
+  def give_rent(user_id) ### find
+    raise "No user records (Records: #{@users})." if @users.empty? == true ### nil, {}
 
     raise "Invalid amount (Amount: $#{@amount})." if @amount < 1
 
-    firstname(user_id)
-    next_id(return_id != 0 ? rent[-1][:id] : 0)
+    firstname(user_id) ### user.name
+    next_id(return_id != 0 ? rent[-1][:id] : 0) ### logica dentro del metodo 
     @rent << { id: @id, initial_amount: @amount, user: @user, amount: @amount }
   end
 
@@ -29,7 +29,7 @@ class RentClass
 
     raise "Amount can not be greater thah $#{@amount}" if amount.to_f > @amount
 
-    id = findrent
+    id = findrent ###
     result = @amount - amount.to_f
     @rent[id][:amount] = result
     @pay.push user: @user, count: result, payment: amount
