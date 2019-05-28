@@ -1,0 +1,2 @@
+module HomieHelper
+end
